@@ -1,0 +1,69 @@
+body { margin: 0; padding: 0; width: 100%; height: 100%; position: fixed; }
+.divGlobal {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	margin: auto;
+	height: 100%;
+}
+.divPrimaria {
+	background-image: url("../imagens/login.jpeg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.divSecundaria {
+	padding: 0 0;
+	display: grid;
+	align-items: center;
+}
+.form {
+	margin: auto;
+	display: grid;
+	grid-template-rows: 0.7fr max-content max-content max-content max-content max-content;
+	height: 100%;
+}
+.divBotao {
+	text-align: center;
+}
+.divBotao button {
+	width: 100%;
+}
+.divInput {
+	border-left: 10px solid #0d6efd
+}
+.divInput input {
+	border-radius: 0
+}
+.divComplementos {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.divEsqueciSenha {
+	text-align: right;
+}
+
+.divTitle {
+	display: grid;
+	text-align: center;
+	font-family: revans;
+	align-items: center;
+}
+
+.divBotaoLogin a {
+	width: 100%;	
+}
+
+.divBotaoRegistrar a {
+	width: 100%;
+}
+
+.divBotaoLogin {
+	display: inline-block;
+}
+
+.divBotaoRegistrar {
+	display: inline-block;
+}
+.rotuloDoCampoDeTexto {
+	font-size: 23px;
+}
