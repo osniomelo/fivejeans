@@ -1,0 +1,8 @@
+{
+  "name": "fivejeans",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/osniomelo/fivejeans.git",
+  "author": "osniomelo <osni_meloads@outlook.com>",
+  "license": "MIT"
+}
