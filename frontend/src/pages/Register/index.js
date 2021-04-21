@@ -4,11 +4,13 @@ import { Grid, Paper, Typography, TextField, Button, CircularProgress } from '@m
 
 import api from '../../services/api';
 
-export default function Login() {
+export default function Register() {
     const history = useHistory();
 
+	const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+	const [confirmpassword, setConfirmpassword] = useState('');
     const [isLoading, setLoading] = useState(false);
 
     async function handleSubmit(e) {
@@ -16,7 +18,7 @@ export default function Login() {
 
         setLoading(true);
 
-        const { status } = await api.post('sessions', { email, password });
+        const { status } = await api.post('users', { name, email, password });
 
         setLoading(false);
 
@@ -35,17 +37,34 @@ export default function Login() {
         );
     }
 
+	if(confirmpassword === password){
+
+	}
+
     return (
         <Grid container justify='center' alignItems='center' style={{ height: '100%' }}>
             <Paper
                 style={{
                     width: 400,
-                    height: 300,
+                    height: 470,
                     padding: 30,
                 }}
             >
                 <form onSubmit={handleSubmit}>
-                    <Typography align='center' variant='h5' component='h1'>Login</Typography>
+                    <Typography align='center' variant='h5' component='h1'>Registre-se</Typography>
+
+					<Grid item xs style={{ marginTop: 20 }}>
+                        <TextField
+                            fullWidth
+                            value={name || ''}
+                            onChange={e => setName(e.target.value)}
+                            variant='standard'
+                            label='Nome'
+                            placeholder='Digite seu nome'
+                            type='text'
+                            name='name'
+                        />
+                    </Grid>
 
                     <Grid item xs style={{ marginTop: 20 }}>
                         <TextField
@@ -73,6 +92,19 @@ export default function Login() {
                         />
                     </Grid>
 
+					<Grid item xs style={{ marginTop: 20 }}>
+                        <TextField
+                            fullWidth
+                            value={confirmpassword || ''}
+                            onChange={e => setConfirmpassword(e.target.value)}
+                            variant='standard'
+                            label='Confirmar Senha'
+                            placeholder='Confirme sua senha'
+                            type='password'
+                            name='confirmpassword'
+                        />
+                    </Grid>
+
                     <Grid
                         container
                         justify="space-around"
@@ -88,11 +120,12 @@ export default function Login() {
                         </Button>
 
                         <Button
-                            type="submit"
+                            type="button"
                             variant="contained"
                             color="primary"
+							onClick={() => history.push('/')}
                         >
-                            Entrar
+                            Registrar-se
                         </Button>
                     </Grid>
                 </form>
